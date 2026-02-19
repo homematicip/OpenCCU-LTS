@@ -10,7 +10,7 @@ ___
 OpenCCU-LTS (**L**ong **T**erm **S**ervice) is a free , alternative oparating system for the smart home central control unit CCU3 by eQ-3. The Long-Term-Service version is a stable and reliable fork of the community-driven [OpenCCU](https://github.com/OpenCCU/OpenCCU) project. The development is supported by eQ-3, but full support cannot be guaranteed.
 
 
-## Systemvoraussetzungen
+## System requirements
 
 OpenCCU-LTS is intended exclusively for use with [CCU3](https://homematic-ip.com/en/product/smart-home-ccu3-central-control-unit) or   [ELV Charly](https://de.elv.com/elvwissen/elvprojekte/zentralen-grundfunktionen/charly-die-naechste-generation-der-smart-home-zentrale). 
 
@@ -24,7 +24,7 @@ For use on other hardware, please use [OpenCCU](https://github.com/OpenCCU/OpenC
 
 ### 2 Installation
 Install the archive via the WebUI under Settings -> Control panel -> CCU maintenance.
-### 3 WebUI aufrufen
+### 3 Open WebUI
 Open the device's IP address in your browser to access the OpenCCU-LTS WebUI.
 
 
