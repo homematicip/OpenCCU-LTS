@@ -32,7 +32,7 @@ Open the device's IP address in your browser to access the OpenCCU-LTS WebUI.
 
 - **Project & Release Images.** The OpenCCU-LTS project (this repository) and the images provided under **[Releases](https://github.com/homematicip/OpenCCU-LTS/releases)** are – unless otherwise stated – licensed under the **[Apache License 2.0](https://opensource.org/licenses/Apache-2.0)**. OpenCCU-LTS is provided free of charge and without commercial intent.
 
-- **Third-party components.** Some included components have different licenses and remain under their respective terms. Example: **Buildroot/Linux** is licensed under **[GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)**, which may be relevant when modifying source code or redistributing derived images. The **[eQ-3 OCCU](https://github.com/eq-3/occu)** components used for connectivity are distributed under the terms of the **[HMSL](https://github.com/eq-3/occu/blob/master/LicenseEN.txt)**.
+- **Third-party components.** Some included components have different licenses and remain under their respective terms. Example: **Buildroot/Linux** is licensed under **[GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)**, which may be relevant when modifying source code or redistributing derived images. The **[eQ-3 OCCU](https://github.com/eq-3/occu)** components used for connectivity are distributed under the terms of the **[HMSL](https://github.com/eq-3/occu/blob/master/LicenseDE.txt)**.
 
 - **Branding & Artwork.** The OpenCCU-LTS logo and other graphics in this repository and in the images are subject to the copyright of their respective authors. Any commercial or non-commercial reuse – especially in redistributed binaries or forks – is **prohibited without prior written permission**.
 
