@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/github/license/homematicip/OpenCCU-LTS.svg)](https://github.com/homematicip/OpenCCU-LTS/blob/master/LICENSE)
 ___
 
-OpenCCU-LTS (**L**ong **T**erm **S**ervice) is a free , alternative oparating system for the smart home central control unit CCU3 by eQ-3. The Long-Term-Service version is a stable and reliable fork of the community-driven [OpenCCU](https://github.com/OpenCCU/OpenCCU) project. The development is supported by eQ-3, but full support cannot be guaranteed.
+OpenCCU-LTS (**L**ong **T**erm **S**upport) is a free, alternative oparating system for the smart home central control unit CCU3 by eQ-3. The Long-Term-Support version is a stable and reliable fork of the community-driven [OpenCCU](https://github.com/OpenCCU/OpenCCU) project. The development is supported by eQ-3, but full support cannot be guaranteed.
 
 
 ## System requirements
