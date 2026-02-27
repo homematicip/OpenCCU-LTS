@@ -3,7 +3,8 @@
 
 ### Your flexible, cloud-free Homematic IP® CCU smart-home-solution
 
-<!--[![Current Release](https://img.shields.io/github/release/OpenCCU/OpenCCU.svg)](https://github.com/homematicip/OpenCCU-LTS/releases/latest) -->
+[![Current Release](https://img.shields.io/github/release/homematicip/OpenCCU-LTS.svg)](https://github.com/homematicip/OpenCCU-LTS/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/homematicip/OpenCCU-LTS/latest/total.svg)](https://github.com/homematicip/OpenCCU-LTS/releases/latest)
 [![License](https://img.shields.io/github/license/homematicip/OpenCCU-LTS.svg)](https://github.com/homematicip/OpenCCU-LTS/blob/master/LICENSE)
 ___
 
