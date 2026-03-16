@@ -8,26 +8,24 @@
 [![License](https://img.shields.io/github/license/homematicip/OpenCCU-LTS.svg)](https://github.com/homematicip/OpenCCU-LTS/blob/master/LICENSE)
 ___
 
-OpenCCU-LTS (**L**ong **T**erm **S**upport) is a free, alternative oparating system for the smart home central control unit CCU3 by eQ-3. The Long-Term-Support version is a stable and reliable fork of the community-driven [OpenCCU](https://github.com/OpenCCU/OpenCCU) project. The development is supported by eQ-3, but full support cannot be guaranteed.
+OpenCCU-LTS (**L**ong **T**erm **S**upport) is a free, alternative oparating system for the smart home central control unit CCU3 by eQ-3. The Long-Term-Support version is a stable and reliable fork of the community-driven [OpenCCU](https://github.com/OpenCCU/OpenCCU) project for the CCU3 hardware. The development is supported by eQ-3, but full support cannot be guaranteed.
 
 
 ## System requirements
 
-OpenCCU-LTS is intended exclusively for use with [CCU3](https://homematic-ip.com/en/product/smart-home-ccu3-central-control-unit) or   [ELV Charly](https://de.elv.com/elvwissen/elvprojekte/zentralen-grundfunktionen/charly-die-naechste-generation-der-smart-home-zentrale). 
+OpenCCU-LTS is intended exclusively for use with [CCU3](https://homematic-ip.com/en/product/smart-home-ccu3-central-control-unit) or [ELV Charly](https://de.elv.com/elvwissen/elvprojekte/zentralen-grundfunktionen/charly-die-naechste-generation-der-smart-home-zentrale).
 
-For use on other hardware, please use [OpenCCU](https://github.com/OpenCCU/OpenCCU).
+For use on other hardware or platforms, please use the upstream [OpenCCU](https://github.com/OpenCCU/OpenCCU) releases.
 
 ## Installation
 1. Download:<br>Please download the latest release archive (OpenCCU-X.XX.XX.YYYYMMDD-ccu3.tgz). The release archives can be found under [Releases](https://github.com/homematicip/OpenCCU-LTS/releases).
 2. Installation:<br>
 3. Open WebUI<br>
 
-
 ### 2 Installation
 Install the archive via the WebUI under Settings -> Control panel -> CCU maintenance.
 ### 3 Open WebUI
 Open the device's IP address in your browser to access the OpenCCU-LTS WebUI.
-
 
 ## Licenses
 
@@ -40,4 +38,3 @@ Open the device's IP address in your browser to access the OpenCCU-LTS WebUI.
 ## Changelog
 
 A detailed, version-specific list of changes can be found under **[Releases](https://github.com/homematicip/OpenCCU-LTS/releases/)** in this repository. Each release contains notes on new features, bug fixes, and other adjustments.
-

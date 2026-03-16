@@ -1035,6 +1035,20 @@ fwinstall()
         exit 1
       fi
 
+      # backup extraconfig.txt before overwriting bootfs
+      EXTRACONFIG_BACKUP=""
+      if [[ -f "/bootfs/extraconfig.txt" ]]; then
+        echo -ne "Backing up extraconfig.txt... "
+        if cp /bootfs/extraconfig.txt /tmp/extraconfig.txt.bak; then
+          echo "OK<br/>"
+          EXTRACONFIG_BACKUP=/tmp/extraconfig.txt.bak
+        else
+          echo "WARNING: backup of extraconfig.txt failed, file will not be preserved<br/>"
+        fi
+      else
+        echo "INFO: no extraconfig.txt found on bootfs, nothing to preserve<br/>"
+      fi
+
       # unmount /bootfs and flash the image using dd
       echo -ne "flashing.."
       umount -f "${BOOTFS_DEV}"
@@ -1057,6 +1071,21 @@ fwinstall()
       if ! mount -o ro "${BOOTFS_DEV}" /bootfs; then
         echo "ERROR: (mount)<br/>"
         exit 1
+      fi
+
+      # restore extraconfig.txt after bootfs overwrite
+      if [[ -n "${EXTRACONFIG_BACKUP}" ]] && [[ -f "${EXTRACONFIG_BACKUP}" ]]; then
+        echo -ne "Restoring extraconfig.txt... "
+        if mount -o remount,rw /bootfs && \
+           cp "${EXTRACONFIG_BACKUP}" /bootfs/extraconfig.txt && \
+           chmod 0644 /bootfs/extraconfig.txt && \
+           mount -o remount,ro /bootfs; then
+          echo "OK<br/>"
+          rm -f "${EXTRACONFIG_BACKUP}"
+        else
+          echo "WARNING: restore of extraconfig.txt failed, backup remains at ${EXTRACONFIG_BACKUP} for manual recovery<br/>"
+          mount -o remount,ro /bootfs 2>/dev/null || true
+        fi
       fi
 
       echo "OK<br/>"
@@ -1165,6 +1194,20 @@ fwinstall()
         exit 1
       fi
 
+      # backup extraconfig.txt before overwriting bootfs
+      EXTRACONFIG_BACKUP=""
+      if [[ -f "/bootfs/extraconfig.txt" ]]; then
+        echo -ne "Backing up extraconfig.txt... "
+        if cp /bootfs/extraconfig.txt /tmp/extraconfig.txt.bak; then
+          echo "OK<br/>"
+          EXTRACONFIG_BACKUP=/tmp/extraconfig.txt.bak
+        else
+          echo "WARNING: backup of extraconfig.txt failed, file will not be preserved<br/>"
+        fi
+      else
+        echo "INFO: no extraconfig.txt found on bootfs, nothing to preserve<br/>"
+      fi
+
       # unmount /bootfs and flash the image using dd
       echo -ne "flashing bootfs.."
       umount -f "${BOOTFS_DEV}"
@@ -1189,12 +1232,26 @@ fwinstall()
         exit 1
       fi
 
+      # restore extraconfig.txt after bootfs overwrite
+      if [[ -n "${EXTRACONFIG_BACKUP}" ]] && [[ -f "${EXTRACONFIG_BACKUP}" ]]; then
+        echo -ne "Restoring extraconfig.txt... "
+        if mount -o remount,rw /bootfs && \
+           cp "${EXTRACONFIG_BACKUP}" /bootfs/extraconfig.txt && \
+           chmod 0644 /bootfs/extraconfig.txt && \
+           mount -o remount,ro /bootfs; then
+          echo "OK<br/>"
+          rm -f "${EXTRACONFIG_BACKUP}"
+        else
+          echo "WARNING: restore of extraconfig.txt failed, backup remains at ${EXTRACONFIG_BACKUP} for manual recovery<br/>"
+          mount -o remount,ro /bootfs 2>/dev/null || true
+        fi
+      fi
+
       echo -ne "OK, "
 
       # on platforms with dedicated pc-bios (non UEFI) boot loaders
       # we have to update them as well.
-      if [[ "${BOOTFS_PLATFORM}" == "tinkerboard" ]] ||
-         [[ "${BOOTFS_PLATFORM}" == "ova" ]] ||
+      if [[ "${BOOTFS_PLATFORM}" == "ova" ]] ||
          [[ "${BOOTFS_PLATFORM}" == "odroid-c4" ]] ||
          [[ "${BOOTFS_PLATFORM}" == "odroid-n2" ]] ||
          [[ "${BOOTFS_PLATFORM}" == "odroid-c2" ]]; then
@@ -1204,14 +1261,9 @@ fwinstall()
         BOOTFS_LOOPSTART=$(/sbin/fdisk -l "${BOOTFS_LOOPROOTDEV}" | grep FAT32 | head -1 | awk '{ printf $3 }')
         echo -ne "updating bootloader "
         if [[ "${BOOTFS_START}" == "${BOOTFS_LOOPSTART}" ]] && [[ "${BOOTFS_LOOPSTART}" -ge 2048 ]]; then
-          if [[ "${BOOTFS_PLATFORM}" == "tinkerboard" ]]; then
-            # Tinkerboard version has U-Boot in seperate boot sector
-            echo -ne "(U-Boot)... "
-            /bin/dd if="${BOOTFS_LOOPROOTDEV}" of="${BOOTFS_ROOTDEV}" bs=32K count=31 seek=1 skip=1 conv=fsync status=none
-            result=$?
-          elif [[ "${BOOTFS_PLATFORM}" == "odroid-c4" ]] ||
-               [[ "${BOOTFS_PLATFORM}" == "odroid-n2" ]] ||
-               [[ "${BOOTFS_PLATFORM}" == "odroid-c2" ]]; then
+          if [[ "${BOOTFS_PLATFORM}" == "odroid-c4" ]] ||
+             [[ "${BOOTFS_PLATFORM}" == "odroid-n2" ]] ||
+             [[ "${BOOTFS_PLATFORM}" == "odroid-c2" ]]; then
             # ODroid-C4/N2/C2 has U-Boot in seperate boot sector
             echo -ne "(U-Boot)... "
             /bin/dd if="${BOOTFS_LOOPROOTDEV}" of="${BOOTFS_ROOTDEV}" bs=512 count=10239 seek=1 skip=1 conv=fsync status=none
