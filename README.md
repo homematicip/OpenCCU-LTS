@@ -18,9 +18,10 @@ OpenCCU-LTS is intended exclusively for use with [CCU3](https://homematic-ip.com
 For use on other hardware or platforms, please use the upstream [OpenCCU](https://github.com/OpenCCU/OpenCCU) releases.
 
 ## Installation
-1. Download:<br>Please download the latest release archive (OpenCCU-X.XX.XX.YYYYMMDD-ccu3.tgz). The release archives can be found under [Releases](https://github.com/homematicip/OpenCCU-LTS/releases).
-2. Installation:<br>
-3. Open WebUI<br>
+1. Download:<br>Please download the latest release archive (OpenCCU-X.XX.XX.YYYYMMDD-ccu3.tgz).<br>
+The release archives can be found under [Releases](https://github.com/homematicip/OpenCCU-LTS/releases).
+For an initial update from CCU3 firmware to OpenCCU-LTS firmware please use the current OpenCCU-X.XX.XX.YYYYMMDD-**ccu3.tgz**.
+If you already use the OpenCCU-LTS, please make sure to download the current OpenCCU-X.XX.XX.YYYYMMDD-**rpi3.zip**.
 
 ### 2 Installation
 Install the archive via the WebUI under Settings -> Control panel -> CCU maintenance.
