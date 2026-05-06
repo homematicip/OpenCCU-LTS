@@ -17,7 +17,8 @@ OpenCCU-LTS ist ausschließlich für den Betrieb auf einer [CCU3](https://homema
 Für den Einsatz auf anderer Hardware verwenden Sie bitte die [OpenCCU](https://github.com/OpenCCU/OpenCCU).
 
 ## Installation
-1. Download:<br>Bitte laden Sie das aktuelle Release-Archiv herunter.<br>
+### 1 Download
+Bitte laden Sie das aktuelle Release-Archiv herunter.<br>
 Die Release-Archive sind unter [Releases](https://github.com/homematicip/OpenCCU-LTS/releases) zu finden.<br>
 Für ein initiales Update von der **CCU3** Firmware verwenden Sie bitte die jeweilige OpenCCU-X.XX.XX.YYYYMMDD-**ccu3.tgz**.<br>
 Sofern Sie bereits die **OpenCCU-LTS** Firmware installiert haben verwenden Sie bitte die OpenCCU-X.XX.XX.YYYYMMDD-**rpi3.zip**.
